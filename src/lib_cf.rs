@@ -7,7 +7,7 @@ mod donation;
 #[near_bindgen]
 #[derive(BorshDeserialize, BorshSerialize)]
 pub struct Contract {
-  pub beneficiary: AccountId,
+  pub beneficiary: AccountId, //reciever
   pub donations: UnorderedMap<AccountId, u128>,
   //pub projects: UnorderedMap<AccountId, u128>
 }

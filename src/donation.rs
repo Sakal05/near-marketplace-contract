@@ -25,6 +25,7 @@ impl Contract {
     let donor: AccountId = env::predecessor_account_id();
     let donation_amount: Balance = env::attached_deposit();
 
+    // get the total amount of donation from predecessor account (&donor), or declare it as 0 if no fund donated yet
     let mut donated_so_far = self.donations.get(&donor).unwrap_or(0);
 
     let to_transfer: Balance = if donated_so_far == 0 {
